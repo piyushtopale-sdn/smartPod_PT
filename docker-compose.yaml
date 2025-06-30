@@ -1,0 +1,54 @@
+version: '3'
+services:
+  mongo:
+    image: mongo
+    ports:
+      - "27019:27017"
+
+  service-a:
+    build: ./backend/service-a
+    ports:
+      - "4000:4000"
+    depends_on:
+      - mongo
+    volumes:
+    - ./backend/service-a:/app
+    - /app/node_modules
+    - ./.env:/app/.env 
+    command: npm run dev    
+
+  service-b:
+    build: ./backend/service-b
+    ports:
+      - "4001:4001"
+    volumes:
+    - ./backend/service-b:/app
+    - /app/node_modules
+    - ./.env:/app/.env 
+    command: npm run dev   
+
+  component-a:
+    build: ./frontend/component-a
+    ports:
+      - "3001:3001"
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./frontend/component-a:/app
+      - /app/node_modules
+    environment:
+      - HOST=0.0.0.0
+      - BROWSER=none
+
+  component-b:
+    build: ./frontend/component-b
+    ports:
+      - "3002:3002"
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./frontend/component-b:/app
+      - /app/node_modules
+    environment:
+      - HOST=0.0.0.0
+      - BROWSER=none
