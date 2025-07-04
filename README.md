@@ -10,19 +10,33 @@ Outcome-focused delivery units that combine reusable software components. It ado
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 # 📚 Table of Contents
+- [Tech Stack](#-tech-stack)
 - [Folder Structure](#-folder-structure)
 - [Key Highlights for MERN](#-key-highlights-for-mern)
 - [smartPods (Feature Modules)](#-smartpods-feature-modules)
 - [Get Started](#-get-started)
-- [Tech Stack](#-tech-stack)
 - [Sample .env File](#-sample-env-file)
+- [Contributing](#-contributing)
 <!-- - [Code Quality](#-code-quality) -->
+
+# 🛠️ Tech Stack
+- **Frontend:** React `18.x`, Webpack 5, Babel
+- **Backend:** Node.js `18.x`, Express.js
+- **Database:** MongoDB
+- **Architecture:** Microfrontend (Module Federation), Pod-based
+- **Containerization:** Docker, Docker Compose
 
 # 📁 Folder Structure
 
-functional-pod/
+<details>
+<summary>smartPod/</summary>
+
+```
+├── .gitignore
 ├── README.md
 ├── docker-compose.yaml
+```
+
 <details>
 <summary><code>backend/</code></summary>
 
@@ -89,13 +103,6 @@ docker compose up --build
 docker compose down
 ```
 
-# 🛠️ Tech Stack
-- **Frontend:** React, Webpack 5, Babel
-- **Backend:** Node.js, Express.js
-- **Database:** MongoDB
-- **Architecture:** Microfrontend (Module Federation), Pod-based
-- **Containerization:** Docker, Docker Compose
-
 # 🔐 Sample .env File
 
 ```
@@ -104,6 +111,31 @@ MONGO_URI=your_mongo_uri
 JWT_SECRET=your_jwt_secret
 
 ```
+
+# 🤝 Contributing
+- Keep UI components generic and reusable
+- Encapsulate feature logic within pods
+- Follow consistent naming conventions across both frontend (React) and backend (Node.js):
+
+<details>
+<summary><strong>📌 Naming Conventions (React + Node.js)</strong></summary>
+
+| Type                  | Convention            | React Example        | Node.js Example         |
+|-----------------------|-----------------------|-----------------------|--------------------------|
+| Component / Class     | PascalCase            | `UserCard.jsx`        | `UserService.js`         |
+| Hook (React only)     | use + camelCase       | `useAuth.js`          | —                        |
+| Function / Method     | camelCase             | `handleClick()`       | `getUserData()`          |
+| Variable / Const      | camelCase             | `userName`            | `dbClient`               |
+| Constant              | UPPER_SNAKE_CASE      | `MAX_ATTEMPTS`        | `DB_URL`                 |
+| File Name             | kebab-case            | `user-profile.jsx`    | `user-service.js`        |
+| Folder Name           | kebab-case            | `user-profile/`       | `middleware/`            |
+| Redux Slice File      | camelCase             | `authSlice.js`        | —                        |
+| Route File            | kebab-case (plural)   | —                     | `users.js`               |
+| Environment Variable  | UPPER_SNAKE_CASE      | `REACT_APP_API_URL`   | `JWT_SECRET`             |
+| Middleware Function   | camelCase             | —                     | `authMiddleware()`       |
+| Config File           | kebab-case            | —                     | `db-config.js`           |
+
+</details>
 
 <!-- # 🧹 Code Quality
 - Linting: ESLint (with Airbnb config recommended)
