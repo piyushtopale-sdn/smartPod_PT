@@ -20,17 +20,9 @@ Outcome-focused delivery units that combine reusable software components. It ado
 
 # 📁 Folder Structure
 
-<details>
-<summary><code>functional-pod/</code></summary>
-
-<details>
-<summary><code>docker-compose.yaml</code></summary>
-</details>
-
-<details>
-<summary><code>README.md</code></summary>
-</details>
-
+functional-pod/
+├── README.md
+├── docker-compose.yaml
 <details>
 <summary><code>backend/</code></summary>
 
@@ -61,7 +53,7 @@ Outcome-focused delivery units that combine reusable software components. It ado
 <summary><code>component-a/</code></summary>
 
 - src/  
-- assets/   
+- assets/  
 - tests/  
 - Dockerfile  
 
@@ -74,8 +66,6 @@ Outcome-focused delivery units that combine reusable software components. It ado
 - assets/  
 - tests/  
 - Dockerfile  
-
-</details>
 
 </details>
 
