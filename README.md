@@ -20,40 +20,67 @@ Outcome-focused delivery units that combine reusable software components. It ado
 
 # 📁 Folder Structure
 
-smartPod/
-└── 
-    ├── backend/
-    │   ├── service-a/
-    │   │   ├── Dockerfile
-    │   │   ├── index.js
-    │   │   └── package.json
-    │   └── service-b/
-    │       ├── Dockerfile
-    │       ├── index.js
-    │       └── package.json
-    └── frontend/
-        ├── component-a/
-        │   ├── babel.config.js
-        │   ├── package.json
-        │   ├── public/
-        │   │   └── index.html
-        │   ├── src/
-        │   │   ├── App.js
-        │   │   ├── Bootstrap.js
-        │   │   ├── index.js
-        │   │   └── logo.svg
-        │   └── webpack.config.js
-        └── component-b/
-            ├── babel.config.js
-            ├── package.json
-            ├── public/
-            │   └── index.html
-            ├── src/
-            │   ├── App.js
-            │   ├── Bootstrap.js
-            │   ├── index.js
-            │   └── logo.svg
-            └── webpack.config.js
+<details>
+<summary><code>functional-pod/</code></summary>
+
+<details>
+<summary><code>docker-compose.yaml</code></summary>
+</details>
+
+<details>
+<summary><code>README.md</code></summary>
+</details>
+
+<details>
+<summary><code>backend/</code></summary>
+
+<details>
+<summary><code>service-a/</code></summary>
+
+- src/  
+- index.js  
+- Dockerfile  
+
+</details>
+
+<details>
+<summary><code>service-b/</code></summary>
+
+- src/  
+- index.js  
+- Dockerfile  
+
+</details>
+
+</details>
+
+<details>
+<summary><code>frontend/</code></summary>
+
+<details>
+<summary><code>component-a/</code></summary>
+
+- src/  
+- assets/   
+- tests/  
+- Dockerfile  
+
+</details>
+
+<details>
+<summary><code>component-b/</code></summary>
+
+- src/  
+- assets/  
+- tests/  
+- Dockerfile  
+
+</details>
+
+</details>
+
+</details>
+
 
 # 🧩 Key Highlights for MERN:
 - **Frontend (React):** Inside `frontend/` folder.
@@ -83,10 +110,9 @@ docker compose down
 
 ```
 NODE_ENV=development
-PORT=5000
 MONGO_URI=your_mongo_uri
 JWT_SECRET=your_jwt_secret
-API_GATEWAY_URL=http://localhost:3000
+
 ```
 
 <!-- # 🧹 Code Quality
