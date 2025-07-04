@@ -85,6 +85,8 @@ Outcome-focused delivery units that combine reusable software components. It ado
 
 </details>
 
+</details>
+
 
 # 🧩 Key Highlights for MERN:
 - **Frontend (React):** Inside `frontend/` folder.
